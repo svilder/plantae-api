@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: plantae_api_development
+
+test:
+  <<: *default
+  database: plantae_api_test
