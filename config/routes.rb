@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
-      root to: 'plants#index', via: :options
+      resources :plants, only: [ :index ], via: :options
     end
   end
+
+  root to: 'pages#home'
 end
